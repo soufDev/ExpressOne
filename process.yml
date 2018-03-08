@@ -1,0 +1,4 @@
+apps:
+  - scripts   : index.js
+    instances p: 4
+    exec_mode : cluster

@@ -1,0 +1,32 @@
+{
+	"name": "express-one",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "nodemon --experimental-modules index.mjs"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"body-parser": "^1.18.2",
+		"cors": "^2.8.4",
+		"express": "^4.16.2",
+		"mongoose": "^5.0.8",
+		"mysql": "^2.15.0",
+		"mysql2": "^1.5.2",
+		"sequelize": "^4.35.2"
+	},
+	"devDependencies": {
+		"nodemon": "^1.17.1"
+	},
+	"rules": {
+		"no-use-before-define": 0,
+		"arrow-body-style": 0,
+		"dot-notation": 0,
+		"no-console": 0,
+		"new-cap": 0
+	}
+}
