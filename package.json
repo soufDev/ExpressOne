@@ -5,12 +5,13 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "nodemon --experimental-modules index.mjs"
+		"start": "nodemon -r @std/esm index.mjs"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"@std/esm": "^0.25.2",
 		"body-parser": "^1.18.2",
 		"cors": "^2.8.4",
 		"express": "^4.16.2",

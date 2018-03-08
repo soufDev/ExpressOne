@@ -1,26 +1,25 @@
-const Router = require('express').Router;
-const UserController = require('../controllers/UserController');
+import express from 'express';
+import UserController from '../controllers/UserController';
 
-const router = Router();
+const userRouter = express.Router();
 
-router.get('/users', (req, res) => {
-    controller.getAll(req, res);
+userRouter.get('/users', (req, res) => {
+    UserController.getAll(req, res);
 });
 
-router.get('/user/:id', (req, res) => {
-    controller.getOne(req, res);
+userRouter.get('/user/:id', (req, res) => {
+    UserController.getOne(req, res);
 });
 
-router.post('/users', (req, res) => {
-    controller.addUser(req, res);
+userRouter.post('/users', (req, res) => {
+    UserController.addUser(req, res);
 });
 
-router.put('/user/:id', (req, res) => {
-    controller.updateUser(req, res);
+userRouter.put('/user/:id', (req, res) => {
+    UserController.updateUser(req, res);
 });
 
-router.delete('/user/:id', (req, res) => {
-    controller.deleteUser(req, res);
+userRouter.delete('/user/:id', (req, res) => {
+    UserController.deleteUser(req, res);
 });
-
-module.exports = router;
+export default userRouter;

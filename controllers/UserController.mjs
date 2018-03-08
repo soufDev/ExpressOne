@@ -1,8 +1,7 @@
 import User from '../models/User';
 
-class UserController {
-
-    getAll = (req, res) => {
+export default class UserController {
+    static getAll(req, res) {
         try {
             User.getAll().then(users => res.send(users));
             console.log("get ALL :D ");
@@ -11,7 +10,7 @@ class UserController {
         }
     }
     
-    getOne = (req, res) => {
+    static getOne(req, res) {
         try {
             const id = parseInt(req.params.id);
             User.getById(id)
@@ -24,9 +23,9 @@ class UserController {
         }
     }
     
-    addUser = (req, res) => {
+    static addUser(req, res) {
         const user = {
-            userName: req.body.username,
+            userName: req.body.userName,
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email,
@@ -38,7 +37,7 @@ class UserController {
         }
     }
     
-    updateUser = (req, res) => {
+    static updateUser(req, res) {
         const userValue = {
             userName: req.body.userName,
             firstName: req.body.firstName,
@@ -63,7 +62,7 @@ class UserController {
         }
     }
     
-    deleteUser = (req, res) => {
+    static deleteUser(req, res) {
         try {
             const id = parseInt(req.params.id);
             User.getById(id)
@@ -80,5 +79,3 @@ class UserController {
     }
     
 }
-
-module.exports = UserController;

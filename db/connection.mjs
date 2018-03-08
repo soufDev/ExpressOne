@@ -1,7 +1,7 @@
 import Sequelize from 'sequelize';
 import Config from '../core/config/config.dev';
 
-const sequelize = new Sequelize(Config.dbName, 'root', 'root', {
+export const sequelize = new Sequelize(Config.dbName, 'root', 'root', {
     host: 'localhost',
     dialect: 'mysql',
     operatorsAliases: false,
@@ -13,13 +13,8 @@ const sequelize = new Sequelize(Config.dbName, 'root', 'root', {
     }
 });
 
-const dbConnection = () => {
+export const dbConnection = () => {
     sequelize.authenticate()
     .then(() => { console.log("connection has been established")})
     .catch(err => console.error("Unable to connect to the database.", err));
-}
-
-module.exports = {
-    dbConnection: dbConnection,
-    sequelize: sequelize
 }

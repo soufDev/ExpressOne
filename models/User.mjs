@@ -1,9 +1,7 @@
 import Sequelize from 'sequelize';
-import connection from '../db/connection';
+import { sequelize } from '../db/connection';
 
-const User = {};
-
-User = connection.sequelize.define('user', {
+let User = sequelize.define('users', {
     userName: { type: Sequelize.STRING },
     lastName: { type: Sequelize.STRING },
     firstName: { type: Sequelize.STRING },
@@ -31,4 +29,4 @@ User.addOne = (user) => {
     return User.create(user);
 }
 
-module.exports = User;
+export default User;

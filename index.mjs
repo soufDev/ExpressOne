@@ -1,13 +1,13 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const config = require('./core/config/config.dev');
-const cors = require('cors');
-const connection = require('./db/connection');
+import express from 'express';
+import bodyParser from 'body-parser';
+import Config from './core/config/config.dev';
+import cors from 'cors';
+import { dbConnection } from './db/connection';
 import User from './models/User';
 import userRouter from './routes/User';
 
-connection.dbConnection();
-const port = config.serverPort;
+dbConnection();
+const port = Config.serverPort;
 
 const app = express();
 app.use(cors());

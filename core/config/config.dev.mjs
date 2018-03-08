@@ -1,12 +1,8 @@
-import path from 'path';
+let Config = {
+    dbHost : process.env.dbHost || 'localhost',
+    dbPort : process.env.dbPort || '27017',
+    dbName : process.env.dbName || 'testExpress',
+    serverPort : process.env.serverPort || 8080
+};
 
-class Config {
-    constructor() {
-        this.dbHost = process.env.dbHost || 'localhost';
-        this.dbPort = process.env.dbPort || '27017';
-        this.dbName = process.env.dbName || 'testExpress';
-        this.serverPort = process.env.serverPort || 8080;
-    }
-}
-
-module.exports = Config;
+export default Config;
